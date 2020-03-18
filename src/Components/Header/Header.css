@@ -1,0 +1,11 @@
+nav.black {
+    background-color: var(--black);
+}
+  
+nav .brand-logo {
+    max-height: 200px;
+}
+
+/* .logo {
+    width: 50px;
+} */

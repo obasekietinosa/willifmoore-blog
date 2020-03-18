@@ -1,0 +1,12 @@
+.socialIcons i {    
+    padding: 15px;
+    border-color: var(--white);
+    border-width: 1px;
+    background-color: var(--white);
+    box-sizing: content-box;
+    height: 48px;
+    width: 48px;
+    line-height: 48px;
+    border-radius: 50%;
+    color: var(--black);
+}
