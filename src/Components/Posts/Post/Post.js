@@ -3,7 +3,6 @@ import './Post.css'
 import BlogService from '../../../Services/BlogService'
 import Loading from '../../Loading/Loading'
 import Helmet from 'react-helmet'
-import PostDate from '../PostDate'
 import PostAuthor from '../PostAuthor'
 import SocialShare from '../../SocialShare/SocialShare'
 
@@ -60,11 +59,6 @@ export default class Post extends Component {
                                     dangerouslySetInnerHTML={{ __html: this.state.post.title.rendered }}
                                 >
                                 </h1>
-                                <p>
-                                    <small>
-                                        <PostDate date={this.state.post.date} />
-                                    </small>
-                                </p>
                                 <PostAuthor 
                                     author={
                                         {

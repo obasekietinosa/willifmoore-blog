@@ -16,7 +16,7 @@
 .Posts li::before {
 	position: absolute;
 	left: 0;
-	counter-increment: a;
+	counter-increment: a -1;
 	content: counter(a)'.';
 	color: var(--grey);
 	font-family: var(--heading-font);

@@ -10,6 +10,8 @@ export default class BlogService {
             method: 'GET'
         });
         let data = await response.json();
+        data.count = response.headers.get("X-WP-Total")
+        data.pages = response.headers.get("X-WP-TotalPages")
         return data;
     }
 
@@ -20,6 +22,17 @@ export default class BlogService {
         });
         let data = await response.json();
         return data[0];
+    }
+
+    getPostsInCategory = async (categoryId, limit=10, offset=0) => {
+        console.log("Getting posts in category");
+        let response = await fetch(this.POSTS_URL + "?_embed&categories=" + categoryId, {
+            method: 'GET'
+        });
+        let data = await response.json();
+        data.count = response.headers.get("X-WP-Total")
+        data.pages = response.headers.get("X-WP-TotalPages")
+        return data;
     }
 
     getAuthor = async (slug) => {
