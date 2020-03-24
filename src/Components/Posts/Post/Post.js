@@ -86,6 +86,9 @@ export default class Post extends Component {
                     <div className="col-10 offset-1 offset-md-3 col-md-6">
                         <SocialShare text={ "Read " + this.state.post.title.rendered + " here." } url={ window.location.href } tag={ "#WillifMoore" } />
                     </div>
+                    <div className="col-10 offset-1 ">
+                      <div class="fb-comments" data-href={ window.location.href } data-width="100%" data-numposts="10"></div>
+                    </div>
                   </div>
                 </div>
               </div>
