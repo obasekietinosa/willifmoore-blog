@@ -3,7 +3,6 @@ import './Post.css'
 import BlogService from '../../../Services/BlogService'
 import Loading from '../../Loading/Loading'
 import Helmet from 'react-helmet'
-import PostDate from '../PostDate'
 import PostAuthor from '../PostAuthor'
 import SocialShare from '../../SocialShare/SocialShare'
 
@@ -60,11 +59,6 @@ export default class Post extends Component {
                                     dangerouslySetInnerHTML={{ __html: this.state.post.title.rendered }}
                                 >
                                 </h1>
-                                <p>
-                                    <small>
-                                        <PostDate date={this.state.post.date} />
-                                    </small>
-                                </p>
                                 <PostAuthor 
                                     author={
                                         {
@@ -91,6 +85,9 @@ export default class Post extends Component {
                   <div className="row">
                     <div className="col-10 offset-1 offset-md-3 col-md-6">
                         <SocialShare text={ "Read " + this.state.post.title.rendered + " here." } url={ window.location.href } tag={ "#WillifMoore" } />
+                    </div>
+                    <div className="col-10 offset-1 ">
+                      <div class="fb-comments" data-href={ window.location.href } data-width="100%" data-numposts="10"></div>
                     </div>
                   </div>
                 </div>
