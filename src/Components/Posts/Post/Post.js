@@ -5,6 +5,8 @@ import Loading from '../../Loading/Loading'
 import Helmet from 'react-helmet'
 import PostAuthor from '../PostAuthor'
 import SocialShare from '../../SocialShare/SocialShare'
+import FacebookComments from '../../FacebookComments/FacebookComments'
+import PostList from '../PostList'
 
 export default class Post extends Component {
   constructor() {
@@ -19,7 +21,9 @@ export default class Post extends Component {
         content: {
           rendered: ""
         }
-      }
+      },
+      relatedPosts: [],
+      relatedPostsLoaded: false
     };
   }
 
@@ -35,9 +39,19 @@ export default class Post extends Component {
         console.log(data)
         let post = data
         let postLoaded = true
-        this.setState({ post, postLoaded, error: "" })
+        this.setState({ post, postLoaded, error: "" }, this.getRelatedPosts)
       })
       .catch(error => this.setState({ error: "There was an error fetching post. Please try again." }))
+  }
+
+  getRelatedPosts = () => {
+    let categoryId = this.state.post.categories[0]
+    this.blogService.getPostsInCategory(categoryId, 3)
+      .then(data => {
+        console.log(data)
+        let relatedPosts = data
+        this.setState({ relatedPosts, relatedPostsLoaded:true })
+      })
   }
 
   render() {
@@ -48,29 +62,29 @@ export default class Post extends Component {
             (
               <div className="Post">
                 <Helmet>
-                  <title>{ this.state.post.title.rendered } - WillifMoore.blog</title>
-                  <meta name="description" content={ this.state.post.excerpt.rendered } />
+                  <title>{this.state.post.title.rendered} - WillifMoore.blog</title>
+                  <meta name="description" content={this.state.post.excerpt.rendered} />
                 </Helmet>
                 <header>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-10 offset-1 offset-md-3 col-md-6">
-                                <h1
-                                    dangerouslySetInnerHTML={{ __html: this.state.post.title.rendered }}
-                                >
-                                </h1>
-                                <PostAuthor 
-                                    author={
-                                        {
-                                            name: this.state.post._embedded.author[0].name,
-                                            slug: this.state.post._embedded.author[0].slug,
-                                            avatar: this.state.post._embedded.author[0].avatar_urls[96],
-                                        }
-                                    } 
-                                />
-                            </div>
-                        </div>
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-10 offset-1 offset-md-3 col-md-6">
+                        <h1
+                          dangerouslySetInnerHTML={{ __html: this.state.post.title.rendered }}
+                        >
+                        </h1>
+                        <PostAuthor
+                          author={
+                            {
+                              name: this.state.post._embedded.author[0].name,
+                              slug: this.state.post._embedded.author[0].slug,
+                              avatar: this.state.post._embedded.author[0].avatar_urls[96],
+                            }
+                          }
+                        />
+                      </div>
                     </div>
+                  </div>
                 </header>
                 <div className="container">
                   <div className="row">
@@ -81,13 +95,23 @@ export default class Post extends Component {
                       >
                       </div>
                     </div>
+                    <div className="col-10 offset-1 col-md-6">
+                      <PostList
+                        posts={this.state.relatedPosts}
+                        status={this.state.relatedPostsLoaded ? "loaded" : "loading"}
+                      />
+                    </div>
                   </div>
                   <div className="row">
                     <div className="col-10 offset-1 offset-md-3 col-md-6">
-                        <SocialShare text={ "Read " + this.state.post.title.rendered + " here." } url={ window.location.href } tag={ "#WillifMoore" } />
+                      <SocialShare text={"Read " + this.state.post.title.rendered + " here."} url={window.location.href} tag={"#WillifMoore"} />
                     </div>
-                    <div className="col-10 offset-1 ">
-                      <div class="fb-comments" data-href={ window.location.href } data-width="100%" data-numposts="10"></div>
+                    <div className="col-10 offset-1 offset-md-3 col-md-6">
+                      <h2>Comments</h2>
+                      <FacebookComments
+                        href={window.location.href}
+                        numposts="10"
+                      />
                     </div>
                   </div>
                 </div>

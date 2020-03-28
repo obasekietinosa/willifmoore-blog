@@ -6,6 +6,7 @@ import Footer from '../Footer/Footer';
 import Home from '../Home/Home';
 import Posts from '../Posts/Posts';
 import Default from '../Default/Default';
+import PrivacyPolicy from '../Pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route path="/posts">
               <Posts />
+            </Route>
+            <Route path="/privacy">
+              <PrivacyPolicy />
             </Route>
             <Route component={ Default } />
           </Switch>

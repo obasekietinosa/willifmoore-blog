@@ -26,7 +26,7 @@ export default class BlogService {
 
     getPostsInCategory = async (categoryId, limit=10, offset=0) => {
         console.log("Getting posts in category");
-        let response = await fetch(this.POSTS_URL + "?_embed&categories=" + categoryId, {
+        let response = await fetch(this.POSTS_URL + "?_embed&categories=" + categoryId + "&per_page=" + limit, {
             method: 'GET'
         });
         let data = await response.json();
