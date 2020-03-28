@@ -41,10 +41,17 @@ export default class Home extends Component {
         return (
             <div>
                 <NewsletterSubscribe />
-                <PostList 
-                    posts={ this.state.posts }
-                    status={ this.state.postsLoaded ? "loaded" : "loading" }
-                />
+                <div className="container">
+                    <div className="row">
+                        <div className="col-10 offset-1 offset-md-0 col-md-12">
+                            <h2 className="text-center">Notes</h2>
+                            <PostList 
+                                posts={ this.state.posts }
+                                status={ this.state.postsLoaded ? "loaded" : "loading" }
+                            />
+                        </div>
+                    </div>
+                </div>
                 <div className="py-3 text-center">
                     <Link to="/posts" className="btn btn-primary">
                         See All

@@ -95,7 +95,8 @@ export default class Post extends Component {
                       >
                       </div>
                     </div>
-                    <div className="col-10 offset-1 col-md-6">
+                    <div className="col-10 offset-1 offset-md-3 col-md-6">
+                      <h3>Also in this category</h3>
                       <PostList
                         posts={this.state.relatedPosts}
                         status={this.state.relatedPostsLoaded ? "loaded" : "loading"}
