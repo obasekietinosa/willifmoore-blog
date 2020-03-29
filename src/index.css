@@ -2,11 +2,17 @@
   --black: #000000;
   --white: #ffffff;
   --primary: #fef3f3;
+  --primary-alt: #f31313;
+  --primary-alt-transparent: #f3131399;
   --gray: #7b817f;
 }
 
 a {
   color: inherit;
+}
+
+a:hover, a:active {
+  color: var(--primary-alt);
 }
 
 .img-center {
@@ -41,10 +47,24 @@ section {
   background-color: var(--black);
   box-shadow: 5px 5px 0px var(--gray);
   border-color: var(--gray);
+  color: var(--white);
+}
+
+.btn-primary:hover, .btn-primary:active {
+  background-color: var(--primary-alt);
+  border-color: var(--primary);
 }
 
 main {
   min-height: calc(100vh - 54px - 121px);
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: var(--primary-alt);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem var(--primary-alt-transparent);
 }
 
 .loader:empty {

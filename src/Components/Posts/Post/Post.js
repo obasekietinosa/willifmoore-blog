@@ -7,6 +7,7 @@ import PostAuthor from '../PostAuthor'
 import SocialShare from '../../SocialShare/SocialShare'
 import FacebookComments from '../../FacebookComments/FacebookComments'
 import PostList from '../PostList'
+import NewsletterSubscribe from '../../NewsletterSubscribe/NewsletterSubscribe'
 
 export default class Post extends Component {
   constructor() {
@@ -95,6 +96,13 @@ export default class Post extends Component {
                       >
                       </div>
                     </div>
+                  </div>
+                </div>
+
+                <NewsletterSubscribe />
+                
+                <div className="container">
+                  <div className="row">
                     <div className="col-10 offset-1 offset-md-3 col-md-6">
                       <h3>Also in this category</h3>
                       <PostList

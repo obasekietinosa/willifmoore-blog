@@ -9,4 +9,9 @@
     line-height: 48px;
     border-radius: 50%;
     color: var(--black);
+    transition: linear .04s;
+}
+
+.socialIcons a:hover i {
+    transform: scale(1.5);
 }
