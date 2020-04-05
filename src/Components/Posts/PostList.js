@@ -16,9 +16,8 @@ export default class PostList extends Component {
                     {
                         this.props.posts.map((post, key) => {
                         return (
-                            <li>
+                          <li key={key}>
                             <PostPreview
-                                key={key}
                                 title={post.title.rendered}
                                 category={post['_embedded']['wp:term'][0][0].name}
                                 datePublished={post.date}
