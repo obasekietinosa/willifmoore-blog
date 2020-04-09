@@ -28,15 +28,12 @@ export default class NewsletterSubscribe extends Component {
             return
         }
         this.setState({ message:"Please wait", status: "Loading" })
-        fetch("https://me.willifmoore.blog/newsletter/subscribe.php", {
-                method: 'POST',
+        fetch("https://me.willifmoore.blog/newsletter/subscribe.php?email=" + this.state.email, {
+                method: 'GET',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    email: this.state.email,
-                })
+                }
             })
             .then(res => res.json())
             .then(data => {
