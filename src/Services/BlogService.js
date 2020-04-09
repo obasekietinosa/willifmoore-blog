@@ -6,7 +6,7 @@ export default class BlogService {
 
     getPosts = async (limit=10, offset=0) => {
         console.log("Getting posts");
-        let response = await fetch(this.POSTS_URL + "?_embed", {
+        let response = await fetch(this.POSTS_URL + "?_embed&per_page=" + limit, {
             method: 'GET'
         });
         let data = await response.json();
