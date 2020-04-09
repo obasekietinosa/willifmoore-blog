@@ -12,11 +12,9 @@ export default class NewsletterSubscribe extends Component {
 
     setEmail = (e) => {
       let email = e.target.value
-      if (email.length) {
-        this.setState({
-          email
-        })
-      }
+      this.setState({
+        email
+      })
     }
 
     submitEmail = () => {
