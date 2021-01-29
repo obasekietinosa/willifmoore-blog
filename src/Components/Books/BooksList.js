@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import Book from './Book';
+import sagebook from '../../assets/img/sagebook.png';
+import nobsbrand from '../../assets/img/nobsbrand.png';
+import moons from '../../assets/img/13moons.png';
 
 export default class BooksList extends Component {
     constructor() {
@@ -7,23 +10,23 @@ export default class BooksList extends Component {
         this.state = {
             books: [
                 {
+                    title: "Sky Sage",
+                    description: "A Collection of Short Stories",
+                    cover: sagebook,
+                    url: "https://www.festivemedia.net/"
+                },
+                {
                     title: "13 Moons",
                     description: "An Illustrated Series",
-                    cover: "/assets/img/13moons.jpg",
+                    cover: moons,
                     url: "https://13moons.africa/chapters"
                 },
                 {
-                    title: "30/30",
-                    description: "A Collection of Short Stories",
-                    cover: "/assets/img/3030.jpg",
-                    url: "https://www.smashwords.com/books/view/615690"
+                    title: "No BS Branding",
+                    description: "No BS Branding",
+                    cover: nobsbrand,
+                    url: "https://selar.co/3gkk"
                 },
-                {
-                    title: "Lonely Roads",
-                    description: "A Novel",
-                    cover: "/assets/img/lonelyroads.png",
-                    url: "https://www.amazon.com/gp/product/B0196Q9XEM/ref=x_gr_mw_bb_sout?ie=UTF8&tag=x_gr_mw_bb_sout-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=B0196Q9XEM&SubscriptionId=1MGPYB6YW3HWK55XCGG2"
-                }
             ]
         }
     }
