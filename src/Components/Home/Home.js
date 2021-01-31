@@ -42,7 +42,6 @@ export default class Home extends Component {
         return (
             <div>
                 <NewsletterSubscribe />
-                <Services />
                 <section>
                   <div className="container">
                       <div className="row">
@@ -64,6 +63,7 @@ export default class Home extends Component {
                 <SocialIcons />
                 <BooksList />
                 <Videos />
+                <Services />
                 <Contact />
             </div>
         )
