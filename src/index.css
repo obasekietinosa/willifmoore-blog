@@ -36,6 +36,7 @@ a:hover, a:active {
 
 section {
   padding: 50px 0;
+  margin-bottom: 10px;
 }
 
 .btn {
@@ -65,6 +66,10 @@ main {
   border-color: var(--primary-alt);
   outline: 0;
   box-shadow: 0 0 0 0.2rem var(--primary-alt-transparent);
+}
+
+.Services {
+  background-color: #eee;
 }
 
 .loader:empty {

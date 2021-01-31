@@ -7,11 +7,12 @@ import Contact from '../Contact/Contact';
 import PostList from '../Posts/PostList';
 import BlogService from '../../Services/BlogService';
 import { Link } from 'react-router-dom';
+import Services from '../Services/Services';
 
 export default class Home extends Component {
   
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.blogService = new BlogService()
       this.state = {
         postsLoaded: false,
@@ -41,6 +42,7 @@ export default class Home extends Component {
         return (
             <div>
                 <NewsletterSubscribe />
+                <Services />
                 <div className="container">
                     <div className="row">
                         <div className="col-10 offset-1 offset-md-0 col-md-12">

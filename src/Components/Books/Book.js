@@ -2,7 +2,7 @@ import React from 'react'
 import "./Book.css"
 
 export default function Book(props) {
-  console.log(props.cta);
+  console.log(props);
   
     return (
       <>

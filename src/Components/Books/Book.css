@@ -4,6 +4,5 @@
 
 .Book img {
     max-height: 300px;
-    box-shadow: 3px 3px 10px var(--black);
     transition: linear .04s;
 }

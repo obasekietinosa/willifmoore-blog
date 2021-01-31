@@ -10,8 +10,8 @@ export default class BooksList extends Component {
         this.state = {
             books: [
                 {
-                    title: "Sky Sage",
-                    description: "A Collection of Short Stories",
+                    title: "The Sky Sage",
+                    description: "SageLand Chronicles (Book I)",
                     cover: sagebook,
                     url: "https://www.festivemedia.net/",
                     cta: {
@@ -27,7 +27,7 @@ export default class BooksList extends Component {
                 },
                 {
                     title: "No BS Branding",
-                    description: "No BS Branding",
+                    description: "A Simple Guide",
                     cover: nobsbrand,
                     url: "https://selar.co/3gkk"
                 },
@@ -48,12 +48,13 @@ export default class BooksList extends Component {
                         {
                             this.state.books.map((book, key) => {
                                 return (
-                                    <div key={key} className="col-12 col-md-4">
+                                    <div key={key} className="text-center col-12 col-md-4">
                                         <Book
                                             url={book.url}
                                             title={book.title}
                                             description={book.description}
                                             cover={book.cover}
+                                            cta={book.cta}
                                         />
                                     </div>
                                 )
