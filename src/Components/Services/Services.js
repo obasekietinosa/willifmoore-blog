@@ -6,7 +6,7 @@ export default function Services() {
       <div className="container">
         <div className="row">
           <div className="col-12 text-center">
-            <h2>My Services</h2>
+            <h2>Services</h2>
           </div>
           <div className="col-12 col-md-4">
             <h4>🖋 Writing Services</h4>
