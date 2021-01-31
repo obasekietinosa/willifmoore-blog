@@ -13,7 +13,11 @@ export default class BooksList extends Component {
                     title: "Sky Sage",
                     description: "A Collection of Short Stories",
                     cover: sagebook,
-                    url: "https://www.festivemedia.net/"
+                    url: "https://www.festivemedia.net/",
+                    cta: {
+                      text: "Download Sample Chapter",
+                      link: "https://me.willifmoore.blog/assets/sky-sage-sample.pdf"
+                    }
                 },
                 {
                     title: "13 Moons",
